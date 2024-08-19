@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #b3c2eb;
+    color: black;
+}
+
+#header{
+    width: 100%;
+    height: 60vh;
+    background-image: url(Images/Background.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    padding: 10px 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 140px;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+
+a {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+
+a::before,
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+a::before {
+    background-color: #54b3d6;
+    height: 2px;
+    bottom: 0;
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+a::after {
+    content: attr(data-replace);
+    height: 100%;
+    top: 0;
+    transform-origin: 100% 50%;
+    transform: translate3d(200%, 0, 0);
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+    color: #54b3d6;
+}
+
+a:hover::before {
+    transform-origin: 0% 50%;
+    transform: scaleX(1);
+}
+
+a:hover::after {
+    transform: translate3d(0, 0, 0);
+}
+
+a span {
+    display: inline-block;
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+a:hover span {
+    transform: translate3d(-200%, 0, 0);
+}
+
+#info {
+    position: relative;
+    width: 100%;
+    height: 50vh; 
+    overflow: hidden; 
+}
+
+#info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(Images/CodeBG.jpg); 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; 
+    z-index: 1; 
+}
+
+.text-overlay {
+    position: relative;
+    z-index: 2; 
+    display: flex;
+    gap: 50px;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%;
+}
+
+.overlay-text {
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.overlay-text:hover {
+    color: #54b3d6; 
+}
+
+#classes{
+    padding-top: 5vh;
+}
+
+.sub-heading{
+    padding-top: 2.5vh;
+}
+
+.button {
+    text-decoration: none; 
+    display: inline-block;
+    width: 80vw;
+    background-color: #b85466; 
+    border-radius: 20px; 
+    font-size: 25px; 
+    text-align: center; 
+    color: white;
+    padding: 15px 30px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #d06275;
+}
